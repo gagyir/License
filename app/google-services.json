@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "757010881532",
+    "firebase_url": "https://license-gagyi.firebaseio.com",
+    "project_id": "license-gagyi",
+    "storage_bucket": "license-gagyi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757010881532:android:47153aba26ecb5d7",
+        "android_client_info": {
+          "package_name": "com.license.gagyi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757010881532-m2r5rs3bhjp3envjjjcar25j4a7u91uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRLVYzeyFsi5aHH0VXRCadMJQ9ny6bzk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757010881532:android:e27190e345cfbce1",
+        "android_client_info": {
+          "package_name": "com.example.gagyi.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757010881532-m2r5rs3bhjp3envjjjcar25j4a7u91uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRLVYzeyFsi5aHH0VXRCadMJQ9ny6bzk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
