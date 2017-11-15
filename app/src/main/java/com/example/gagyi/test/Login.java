@@ -156,8 +156,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
                         if(task.isSuccessful()){
 
-                            Intent Sapientia = new Intent(Login.this, Sapientia.class);
-                            startActivity(Sapientia);
+                            Intent UserInterface = new Intent(Login.this, UserInterface.class);
+                            startActivity(UserInterface);
                             finish();
                         }
 

@@ -28,7 +28,8 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login" />
-        <activity android:name=".ListApplications"></activity>
+        <activity android:name=".ListApplications" />
+        <activity android:name=".UserInterface"></activity>
     </application>
 
 </manifest>
