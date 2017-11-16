@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +45,20 @@ public class ListApplications extends ListActivity {
 
         ApplicationInfo app = appList.get(position);
 
-        try{
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("games");
+
+
+        String key = myRef.push().getKey();
+        Game testGame = new Game(key,(String)app.loadLabel(packageManager),app.packageName,"Ez egy jatek","Ez egy random description");
+        myRef.child(key).setValue(testGame);
+
+        Intent intent = new Intent(ListApplications.this,EducatorInterface.class);
+        startActivity(intent);
+        finish();
+
+        /*try{
 
             Intent intent = packageManager.getLaunchIntentForPackage(app.packageName);
 
@@ -54,7 +70,9 @@ public class ListApplications extends ListActivity {
             Toast.makeText(ListApplications.this,e.getMessage(),Toast.LENGTH_LONG).show();
         }catch (Exception e){
             Toast.makeText(ListApplications.this,e.getMessage(),Toast.LENGTH_LONG).show();
-        }
+        }*/
+
+
     }
 
     private List<ApplicationInfo> checkForLaunchIntent(List<ApplicationInfo> list){

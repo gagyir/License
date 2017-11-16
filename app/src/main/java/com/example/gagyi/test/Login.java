@@ -30,6 +30,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -50,6 +51,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     /**
      * Id to identity READ_CONTACTS permission request.
      */
+    private boolean successfullLogin;
+
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
@@ -82,6 +85,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
+        successfullLogin = false;
         //firebase
         mAuth = FirebaseAuth.getInstance();
 
@@ -150,13 +154,17 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w("asd", "signInWithEmail:failed", task.getException());
-                            //Toast.makeText(EmailPasswordActivity.this, R.string.auth_failed,
-                                    //Toast.LENGTH_SHORT).show();
+
+                            successfullLogin = false;
                         }
 
                         if(task.isSuccessful()){
 
-                            Intent UserInterface = new Intent(Login.this, UserInterface.class);
+                            successfullLogin = true;
+                            //Intent UserInterface = new Intent(Login.this, UserInterface.class);
+
+                            Intent UserInterface = new Intent(Login.this, EducatorInterface.class);
+
                             startActivity(UserInterface);
                             finish();
                         }
@@ -411,11 +419,12 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
             mAuthTask = null;
             showProgress(false);
 
-            if (success) {
+            if (successfullLogin) {
                 finish();
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+                //mPasswordView.setError(getString(R.string.error_incorrect_password));
+                //mPasswordView.requestFocus();
+                Toast.makeText(Login.this, R.string.auth_failed, Toast.LENGTH_SHORT).show();
             }
         }
 

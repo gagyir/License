@@ -29,7 +29,7 @@ public class Sapientia extends AppCompatActivity {
         usersEndPoint = myRef.child("users");
         educatorsEndPoint = myRef.child("educators");
         parentsEndPoint = myRef.child("parents");
-        gamesEndPoint = myRef.child("games");
+        gamesEndPoint = database.getReference("games");
 
         String key = gamesEndPoint.push().getKey();
         Game testGame = new Game(key,"A betu","com.test.test","http://google.com","Ez egy teszt jatek az adatbazishoz");

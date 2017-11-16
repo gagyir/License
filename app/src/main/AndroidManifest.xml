@@ -29,7 +29,8 @@
             android:name=".Login"
             android:label="@string/title_activity_login" />
         <activity android:name=".ListApplications" />
-        <activity android:name=".UserInterface"></activity>
+        <activity android:name=".UserInterface" />
+        <activity android:name=".EducatorInterface"></activity>
     </application>
 
 </manifest>
